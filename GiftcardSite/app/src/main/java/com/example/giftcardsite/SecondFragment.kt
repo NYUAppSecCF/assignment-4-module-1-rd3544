@@ -66,12 +66,18 @@ class SecondFragment : Fragment() {
                         loggedInUser = response.body()
                         Log.d("Register Success", "Register success. Boo.")
                         Log.d("Register Success", "Token:" + loggedInUser?.token.toString())
-                        var intent = Intent(Intent.ACTION_VIEW)
-                        intent.type = "text/giftcards_browse"
-                        intent.data = Uri.parse("https://appsec.moyix.net/api/index")
-						intent.setClassName("com.android.chrome", "com.google.android.apps.chrome.Main")
-                        intent.putExtra("User", loggedInUser);
-                        startActivity(intent)
+						
+						val URL = Uri.parse("https://appsec.moyix.net/api/index")
+						val viewIntent = Intent(Intent.ACTION_VIEW).apply {
+							setDataAndType(URL, "text/giftcards_browse")
+							setPackage("com.android.chrome")
+							putExtra("User", loggedInUser)
+						} try {
+							startActivity(viewIntent)
+						} catch(exception: ActivityNotFoundException) {
+							viewIntent.setPackage(null)
+							startActivity(viewIntent)
+						}
                     }
                 }
             })

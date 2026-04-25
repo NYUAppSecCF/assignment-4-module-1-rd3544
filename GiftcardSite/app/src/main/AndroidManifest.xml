@@ -21,7 +21,6 @@
             android:name=".UseCard"
             android:label="@string/title_activity_use_card"
             android:theme="@style/Theme.GiftcardSite.NoActionBar"
-            android:exported="false">
             <intent-filter>
             <action android:name="android.intent.action.VIEW" />
 
