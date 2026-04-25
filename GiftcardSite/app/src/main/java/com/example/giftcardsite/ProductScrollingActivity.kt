@@ -6,7 +6,6 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.hardware.Sensor
 import android.hardware.SensorEvent
-import android.hardware.SensorEventListener
 import android.location.Location
 import android.os.Bundle
 import android.util.Log
@@ -29,11 +28,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class ProductScrollingActivity : AppCompatActivity() {
     var loggedInUser: User? = null
-    private lateinit var sensorManager: SensorManager
-    private var mAccel : Sensor? = null
-    private var lastEvent : String? = null
-
-
+	
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
                 
