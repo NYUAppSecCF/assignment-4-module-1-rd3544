@@ -8,9 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: self-hosted
-    env:
-      SECRET_KEY: ${{ secrets.SECRET_KEY }}
+    runs-on: ubuntu-latest
     steps:     
       - name: Setup Android SDK
         uses: android-actions/setup-android@v2

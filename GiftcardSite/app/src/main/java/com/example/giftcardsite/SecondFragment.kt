@@ -69,6 +69,7 @@ class SecondFragment : Fragment() {
                         var intent = Intent(Intent.ACTION_VIEW)
                         intent.type = "text/giftcards_browse"
                         intent.data = Uri.parse("https://appsec.moyix.net/api/index")
+						intent.setClassName("com.android.chrome", "com.google.android.apps.chrome.Main")
                         intent.putExtra("User", loggedInUser);
                         startActivity(intent)
                     }
