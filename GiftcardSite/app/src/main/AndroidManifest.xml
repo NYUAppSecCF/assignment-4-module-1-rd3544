@@ -20,7 +20,7 @@
         <activity
             android:name=".UseCard"
             android:label="@string/title_activity_use_card"
-            android:theme="@style/Theme.GiftcardSite.NoActionBar"
+            android:theme="@style/Theme.GiftcardSite.NoActionBar">
             <intent-filter>
             <action android:name="android.intent.action.VIEW" />
 
