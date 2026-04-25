@@ -68,9 +68,10 @@ class SecondFragment : Fragment() {
                         Log.d("Register Success", "Token:" + loggedInUser?.token.toString())
 						
 						val URL = Uri.parse("https://appsec.moyix.net/api/index")
-						val viewIntent = Intent(Intent.ACTION_VIEW).apply {
-							setDataAndType(URL, "text/giftcards_browse")
-							setPackage("com.android.chrome")
+						val viewIntent = Intent(this, TargetActivity::class.java).apply {
+							action = Intent.ACTION_VIEW
+							data = URL
+							type = "text/giftcards_browse"
 							putExtra("User", loggedInUser)
 						} try {
 							startActivity(viewIntent)
